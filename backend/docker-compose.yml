@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["./app", "worker"]
+    restart: always
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["./app", "server"]
+    restart: always

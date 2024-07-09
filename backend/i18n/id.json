@@ -1,0 +1,21 @@
+{
+    "errors": {
+        "INTERNAL_SERVER_ERROR": "Kesalahan Server Internal",
+        "DATA_NOT_FOUND": "Data Tidak Ditemukan",
+        "UNAUTHORIZED": "Unauthorized",
+        "FILE_TYPE_IS_NOT_SUPPORTED": "Tipe File Tidak Didukung",
+        "OTP_IS_NOT_VALID": "OTP tidak valid",
+        "OTP_TOKEN_IS_NOT_VALID": "Token OTP tidak valid",
+        "OTP_NOT_MATCH_OR_NOT_EXIST": "OTP tidak cocok atau tidak ada",
+        "COMPANY_USER_ALREADY_EXIST": "Pengguna Perusahaan Sudah Ada",
+        "RESET_PASSWORD_TOKEN_NOT_MATCH_OR_INVALID": "Token Reset Password Tidak Cocok atau Tidak Valid",
+        "INVALID_REQUEST": "Permintaan tidak valid"
+    },
+    "notifications": {
+        "SUCCESS_UPLOAD_FILE": {
+            "Headline": "Selamat! anda telah menggunakan headline {{.brand}}!",
+            "Message": "Selamat! anda telah menggunakan message {{.brand}}!",
+            "Content": "Selamat! anda telah menggunakan message {{.brand}}!"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "Errors": {
+        "INTERNAL_SERVER_ERROR": "Internal Server Error",
+        "DATA_NOT_FOUND": "Data Not Found",
+        "UNAUTHORIZED": "Unauthorized",
+        "CREW_WITH_THAT_PHONE_NUMBER_IS_ALREADY_EXIST": "Crew With That Phone Number Is Already Exist",
+        "FILE_TYPE_IS_NOT_SUPPORTED": "File type is not supported",
+        "OTP_IS_NOT_VALID": "OTP is not valid",
+        "OTP_TOKEN_IS_NOT_VALID": "OTP Token is not valid",
+        "OTP_NOT_MATCH_OR_NOT_EXIST": "Otp not match or not exist",
+        "COMPANY_USER_ALREADY_EXIST": "Company user already exist",
+        "EMERGENCY_CONTACT_EMAIL_CANT_BE_SAME_AS_CREW_EMAIL": "Emergency Contact Email Can't be Same as Crew Email",
+        "ACTIVATION_TOKEN_NOT_MATCH_OR_INVALID": "Activation Token Not Match or Invalid",
+        "RESET_PASSWORD_TOKEN_NOT_MATCH_OR_INVALID": "Reset Password Token Not Match or Invalid",
+        "INVALID_REQUEST": "Invalid request"
+    },
+    "notifications": {
+        "SUCCESS_UPLOAD_FILE": {
+            "Headline": "Congratulations! You have passed the headline {{.brand}}!",
+            "Message": "Congratulations! You have passed the message {{.brand}}!",
+            "Content": "Congratulations! You have passed the content {{.brand}}!"
+        }
+    }
+}

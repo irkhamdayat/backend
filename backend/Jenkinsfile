@@ -1,0 +1,73 @@
+// SERVICE
+def get_trigger         = "${env.GET_TRIGGER}"
+// def GITHUB_TOKEN        = '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'
+
+
+def job_success         = "SUCCESS"
+def job_error           = "ERROR"
+
+// Remote Server
+def remote_server       = ["irkhammuh11@34.132.14.110"] 
+
+// INITIALIZATION Parameter
+def version, runPipeline, runBranch, scmChart
+
+node ('master') {
+    try{  
+        stage('Checkout') {
+            
+            checkout([
+                $class: 'GitSCM', 
+                    branches: [[name: '*/feature/dockerfile']], 
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/Halalins/backend',
+                        credentialsId: 'github-user-pass'
+                ]]
+            ])
+
+            sh "ls -al"
+        }
+
+        stage("Backup Image") {
+            echo "Start Backup Image"
+            sh '''
+                docker images
+                
+            '''
+        }
+
+        // Deployment 
+        stage("Deployment") {
+            echo "Start Deployment To Remote Server"
+            sh '''
+                docker images
+                docker compose down
+                docker compose up -d
+                docker images
+                docker ps
+                docker builder prune
+            '''
+        }
+
+    } catch (e) {
+        stage ("Error") {
+            echo "Job Failed"
+        }
+        currentBuild.result = "FAILED"
+    }
+}
+
+
+                        // docker tag halalins:latest halalins:backup
+
+                        // docker stop ${service_name}-${get_trigger}-container
+                        // docker run -d --name ${service_name}-${get_trigger}-container ${dockerImageName}:${newTag}
+                        // docker images
+                        // docker ps
+                        // docker stop $(docker ps -a -q)
+                        // docker rm $(docker ps -a -q)
+                        // docker rmi $(docker images -q)
+                        // docker build -t halalins:1.0 .                 
+                        // docker images
+                        // docker ps
+                        // docker run -d -p 7171:7171 --name halalins_container halalins:1.0
